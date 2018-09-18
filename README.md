@@ -9,3 +9,6 @@ List of algorithms implemented so far:
 ## Sorting
 - Insertion sort
 - Merge sort
+
+## Data Structures
+- Stack: A dynamically allocated stack written in C
