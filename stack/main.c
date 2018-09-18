@@ -7,11 +7,12 @@
 int main(){
     stack st = make_stack();
     int i;
-    int n_elements = 100;
+    int n_elements = 10;
     printf("\nStack capacity: %d\n",st.capacity);
     printf("Pushing elements...\n");
     for (i=0; i<n_elements; i++){
         push(&st, i);
+        printf("%d\t",i);
     }
     printf("\nstack capacity: %d\n",st.capacity);
     

@@ -28,27 +28,6 @@ int pop(stack *st){
     return element;
 }
 
-//int remove(stack *st, int index){
-//    
-//    if (index > st->size){
-//        raise(SIGSEGV);
-//    }
-//    
-//    int i;
-//    int val = st[index];
-//    for (i=index+1; i<st->size; i++){
-//        st->st[i-1] = st->st[i];
-//    }
-//
-//    st->size--;
-//
-//    if (st->size <= (st->capacity/4)){
-//        resize(st, 'm');
-//    }
-//
-//    return val;
-//}
-
 int max(stack *st){
     int val = INT_MIN;
     int i;
@@ -81,7 +60,11 @@ void resize(stack *st, char mode){
     else if (mode == 'm'){
         new_capacity = st->capacity/2;
     }
+    int *old_st = st->st;
     st->st = realloc(st->st,sizeof(int)*new_capacity);
+    if (old_st != st->st){
+        free(old_st);
+    }
     st->capacity = new_capacity;
 }
 

@@ -2,6 +2,7 @@
 
 #include <limits.h>
 #include <signal.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct stack{
@@ -15,8 +16,6 @@ stack make_stack(void);
 void push(stack *st, int element);
 
 int pop(stack *st);
-
-//int remove(stack *st, int index);
 
 int max(stack *st);
 
