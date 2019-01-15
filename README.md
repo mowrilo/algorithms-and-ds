@@ -12,3 +12,4 @@ List of algorithms implemented so far:
 
 ## Data Structures
 - Stack: A dynamically allocated stack written in C
+- Queue: A limited-size queue written in C
