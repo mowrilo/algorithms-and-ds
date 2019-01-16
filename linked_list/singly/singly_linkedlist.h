@@ -16,3 +16,5 @@ linkedlist insert_element(linkedlist list, int key, int value);
 linkedlist delete_element(linkedlist list, int key);
 
 int find_element(linkedlist list, int key);
+
+void free_list(linkedlist list);

@@ -13,6 +13,12 @@ linkedlist insert_element(linkedlist list, int key, int value){
     new_element->key = key;
     new_element->value = value;
     list = new_element;
+    //if (first_element != NULL){
+    //    printf("Inserted key %d. It points to element of key %d\n",new_element->key,first_element->key);
+    //}
+    //else{
+    //    printf("Inserted key %d. It points to element of key NULL\n",new_element->key);
+    //}
     return list;
 }
 
@@ -34,9 +40,15 @@ linkedlist delete_element(linkedlist list, int key){
     }
 
     printf("Found element! \n\tKey: %d\n\tValue: %d\n",next_element->key,next_element->value);
+    //if (next_element->next != NULL)    printf("It points to element of key %d\n",next_element->next->key);
     printf("Deleting...\n");
 
-    prev_element->next = next_element->next;
+    if (prev_element == next_element){
+        list = next_element->next;
+    }
+    else{
+        prev_element->next = next_element->next;
+    }
     free(next_element);
     return list;
 }
@@ -56,3 +68,9 @@ int find_value(linkedlist list, int key){
     return next_element->value;
 }
 
+void free_list(linkedlist list){
+    printf("DELETING THE REST OF THE LIST...\n");
+    while (list != NULL){
+        list = delete_element(list, list->key);
+    }
+}
