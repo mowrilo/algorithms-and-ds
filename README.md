@@ -7,9 +7,11 @@ Date of creation: September 16, 2018.
 List of algorithms implemented so far:
 
 ## Sorting
-- Insertion sort
-- Merge sort
+* Insertion sort (written in C++)
+* Merge sort (written in C++)
 
 ## Data Structures
-- Stack: A dynamically allocated stack written in C
-- Queue: A limited-size queue written in C
+* Stack (written in C)
+* Queue: (written in C)
+* Linked Lists:
+    - Singly Linked List (written in C) 
