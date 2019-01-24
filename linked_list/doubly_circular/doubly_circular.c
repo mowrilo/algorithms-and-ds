@@ -5,13 +5,12 @@ linkedlist create_list(){
     linkedlist list = malloc(sizeof(list_element));
     list->next = list;
     list->prev = list;
-    //list->key = -1;
-    //list->value = -1;
+    list->key = -1;
+    list->value = -1;
     return list;
 }
 
 linkedlist insert_element(linkedlist list, int key, int value){
-    //list_element *sentinel = list;
     list_element *new_element = malloc(sizeof(list_element));
     list_element *last_element = list->prev;
     last_element->next = new_element;
@@ -20,7 +19,6 @@ linkedlist insert_element(linkedlist list, int key, int value){
     new_element->key = key;
     new_element->value = value;
     list->prev = new_element;
-    //list = sentinel;
     return list;
 }
 
@@ -44,9 +42,9 @@ linkedlist delete_element(linkedlist list, int key){
     printf("Found element! \n\tKey: %d\n\tValue: %d\n",next_element->key,next_element->value);
     printf("Deleting...\n");
 
-    //list_element *next_next = next_element->next;
-    prev_element->next = next_element->next;
-    next_element->next->prev = prev_element;
+    list_element *next_next = next_element->next;
+    prev_element->next = next_next;
+    next_next->prev = prev_element;
     free(next_element);
     return list;
 }
