@@ -15,3 +15,4 @@ List of algorithms implemented so far:
 * Queue: (written in C)
 * Linked Lists:
     - Singly Linked List (written in C) 
+    - Circular Doubly Linked List with Sentinel (written in C)
