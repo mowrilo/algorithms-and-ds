@@ -39,9 +39,9 @@ linkedlist delete_element(linkedlist list, int key){
         }
     }
 
-    printf("Found element! \n\tKey: %d\n\tValue: %d\n",next_element->key,next_element->value);
+ //   printf("Found element! \n\tKey: %d\n\tValue: %d\n",next_element->key,next_element->value);
     //if (next_element->next != NULL)    printf("It points to element of key %d\n",next_element->next->key);
-    printf("Deleting...\n");
+  //  printf("Deleting...\n");
 
     if (prev_element == next_element){
         list = next_element->next;
@@ -53,9 +53,13 @@ linkedlist delete_element(linkedlist list, int key){
     return list;
 }
 
-int find_value(linkedlist list, int key){
+int find_element(linkedlist list, int key){
     list_element *next_element = list;
     
+    if (list == NULL){
+        printf("The list does not contain such key! Returning -1...\n");
+        return -1;
+    }
     while(next_element->key != key){
         next_element = next_element->next;
         if (next_element == NULL){
@@ -64,12 +68,13 @@ int find_value(linkedlist list, int key){
         }
     }
     
-    printf("Found element! \n\tKey: %d\n\tValue: %d\n",next_element->key,next_element->value);
+    
+//    printf("Found element! \n\tKey: %d\n\tValue: %d\n",next_element->key,next_element->value);
     return next_element->value;
 }
 
 void free_list(linkedlist list){
-    printf("DELETING THE REST OF THE LIST...\n");
+    //printf("DELETING THE REST OF THE LIST...\n");
     while (list != NULL){
         list = delete_element(list, list->key);
     }
