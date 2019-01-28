@@ -12,7 +12,7 @@ table create_hash(){
 }
 
 int hash(int key){
-    return 13*key % TAB_SIZE;
+    return key % TAB_SIZE;
 }
 
 table insert_hash(table t, int key, int value){
