@@ -17,3 +17,4 @@ List of algorithms implemented so far:
     - Singly Linked List (written in C) 
     - Circular Doubly Linked List with Sentinel (written in C)
 * Hash Table with Chaining, using the linked list cited above (written in C)
+* Binary Search Tree
